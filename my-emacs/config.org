@@ -1,0 +1,106 @@
+* My personal GNU Emacs config file
+
+** Setup MELPA
+
+ #+begin_src emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-refresh-contents)
+(package-initialize)
+ #+end_src
+
+** Setup use-package
+
+#+begin_src emacs-lisp
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(setq use-package-always-ensure t)
+#+end_src
+
+** Setting up all-the-icons
+#+begin_src emacs-lisp
+(use-package all-the-icons
+  :ensure t)
+#+end_src
+
+** Emojis
+#+begin_src emacs-lisp
+(use-package emojify
+  :hook (after-init . global-emojify-mode))
+#+end_src
+
+** Delete selection mode
+ #+begin_src emacs-lisp
+(delete-selection-mode t)
+ #+end_src
+
+** Setting font
+#+begin_src emacs-lisp
+(set-frame-font "JetBrains Mono 11" nil t)
+#+end_src
+
+** Setting keybindings for text zoom
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+#+end_src
+
+** GUI tweaks
+
+*** disable menubar, toolbars and scrollbars
+#+begin_src emacs-lisp
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+#+end_src
+
+*** line numbers and truncated lines
+#+begin_src emacs-lisp
+(global-display-line-numbers-mode 1)
+(global-visual-line-mode t)
+#+end_src
+
+** Org mode
+
+*** org bullet points
+#+begin_src emacs-lisp
+(use-package org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+#+end_src
+
+** Coding tweaks
+
+*** source code block syntax highlighting
+#+begin_src emacs-lisp
+(setq org-src-fontify-natively t
+    org-src-tab-acts-natively t
+    org-confirm-babel-evaluate nil
+    org-edit-src-content-indentation 0)
+#+end_src
+
+** Emacs theme
+#+begin_src emacs-lisp
+(use-package doom-themes)
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t) ; if nil, italics is universally disabled
+(load-theme 'doom-one t)
+#+end_src
+
+** Evil mode
+#+begin_src emacs-lisp
+(use-package evil
+  :init      ;; tweak evil's configuration before loading it
+  (setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+  (setq evil-want-keybinding nil)
+  (setq evil-vsplit-window-right t)
+  (setq evil-split-window-below t)
+  (evil-mode))
+(use-package evil-collection
+  :after evil
+  :config
+  (setq evil-collection-mode-list '(dashboard dired ibuffer))
+  (evil-collection-init))
+#+end_src
