@@ -104,3 +104,13 @@
   (setq evil-collection-mode-list '(dashboard dired ibuffer))
   (evil-collection-init))
 #+end_src
+
+** Setting up completions
+
+*** Installing vertico
+  (use-package vertico
+    :ensure t
+    :custom
+    (vertico-cycle t)
+    :init
+    (vertico-mode))
