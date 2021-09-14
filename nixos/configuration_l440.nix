@@ -97,10 +97,9 @@
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      firefox
-  ];
-  
-  # enabling all licenses for nix
-  nixpkgs.config.allowUnfree = true;  
+     emacs
+     discord
+  ];  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
