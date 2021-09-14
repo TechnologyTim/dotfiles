@@ -90,6 +90,9 @@
   programs.steam.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.flatpak.enable = true;
+  
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -98,7 +101,7 @@
      wget
      firefox
      emacs
-     discord
+     virt-manager
   ];  
 
   # Some programs need SUID wrappers, can be configured further or are
