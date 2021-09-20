@@ -102,5 +102,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias c="clear"
 alias q="exit"
-alias nixcfg="sudo nvim /etc/nixos/configuration.nix"
-alias nixrebuild="sudo nixos-rebuild switch"
+alias vim="nvim"
