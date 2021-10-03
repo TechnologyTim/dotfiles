@@ -66,7 +66,7 @@
   services.xserver.videoDrivers = [ "modesetting" ];
 
   # Configure keymap in X11
-  services.xserver.layout = "de";
+  services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
 
   # Enable CUPS to print documents.
