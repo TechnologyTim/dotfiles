@@ -1,0 +1,27 @@
+# My alacritty config 
+
+window:
+  padding:
+    x: 6
+    y: 7
+    dynamic_padding: false
+
+scrolling:
+    history: 5000
+
+font:
+    normal:
+      family: JetBrains Mono
+      style: Medium
+    
+    bold:
+      family: JetBrains Mono
+      style: Bold
+
+    size: 12.0
+
+# Dracula color scheme
+import:
+- themes/dracula.yml
+
+
