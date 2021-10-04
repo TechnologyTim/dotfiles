@@ -255,4 +255,7 @@ bar {
 # My own configurations
 default_border pixel 2
 
+# autostart
+exec synclient TouchpadOff=1 & 
+
 include /etc/sway/config.d/*
