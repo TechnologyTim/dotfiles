@@ -39,6 +39,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 
 # set screen brightness using light
+# You need to run "sudo chmod +s /usr/bin/light" for the commands to work correctly
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 
