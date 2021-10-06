@@ -229,3 +229,4 @@ exec picom -i 1 &
 exec nitrogen --restore &
 exec blueman-mamager &
 exec synclient TouchpadOff=1 &
+exec nextcloud &
