@@ -227,5 +227,5 @@ exec xrandr --output eDP-1 --primary --mode 1600x900 --pos 848x1050 --rotate nor
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec picom -i 1 &
 exec nitrogen --restore &
-exec blueman-applet &
+exec blueman-mamager &
 exec synclient TouchpadOff=1 &
