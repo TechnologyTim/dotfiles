@@ -23,7 +23,7 @@ set $menu wofi --show run --hide-scroll | wofi | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/tim/Pictures/Wallpapers/Star Wars Wallpapers/wall_imperialstardestroyer_mist.jpg fill
+output * bg /home/tim/Pictures/Wallpapers/Star Wars Wallpapers/wall_imperialstardestroyer_mist.jpg fill
 #
 # Example configuration:
 #

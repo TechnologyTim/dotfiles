@@ -52,7 +52,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-	bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -224,9 +224,10 @@ default_border pixel 3
 exec xrandr --output eDP-1 --primary --mode 1600x900 --pos 848x1050 --rotate normal --output VGA-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1680x1050 --pos 0x0 --rotate normal --output DP-2-2 --mode 1680x1050 --pos 1680x0 --rotate normal --output DP-2-3 --off
 
 # autostart
+exec setxkbmap de
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec picom -i 1 &
 exec nitrogen --restore &
 exec blueman-mamager &
-exec synclient TouchpadOff=1 &
+#exec synclient TouchpadOff=1 &
 exec nextcloud &
