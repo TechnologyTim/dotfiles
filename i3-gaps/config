@@ -228,7 +228,7 @@ exec setxkbmap de
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec picom -i 1 &
 exec nitrogen --restore &
-exec blueman-manager &
+exec blueman-applet &
 #exec synclient TouchpadOff=1 &
 exec nextcloud &
 exec gnome-keyring-daemon --start &

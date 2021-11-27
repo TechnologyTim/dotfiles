@@ -1,2 +1,3 @@
-#!/bin/sh
-xrandr --output eDP-1 --primary --mode 1600x900 --pos 848x1050 --rotate normal --output VGA-1 --off --output DP-1 --off --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --off --output DP-2-1 --mode 1680x1050 --pos 0x0 --rotate normal --output DP-2-2 --mode 1680x1050 --pos 1680x0 --rotate normal --output DP-2-3 --off
+#!/bin/bash
+
+xrandr --output eDP1 --mode 1600x900 && xrandr --output DP2-2 --mode 1680x1050 --left-of eDP1 --primary && xrandr --output DP2-3 --mode 1680x1050 --left-of DP2-2
