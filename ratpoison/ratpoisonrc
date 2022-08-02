@@ -1,0 +1,26 @@
+exec /usr/bin/rpws init 9 -k
+exec picom -i 1
+exec nitrogen --restore
+
+escape Super_L
+
+set winname title
+set wingravity center
+set transgravity center
+set bargravity center
+set border 3
+set barpadding 1 1
+
+bind t exec alacritty
+bind d exec rofi -show run
+bind q exec chromium
+
+bind 1 exec rpws 1
+bind 2 exec rpws 2
+bind 3 exec rpws 3
+bind 4 exec rpws 4
+bind 5 exec rpws 5
+bind 6 exec rpws 6
+bind 7 exec rpws 7
+bind 8 exec rpws 8
+bind 9 exec rpws 9
