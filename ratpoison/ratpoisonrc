@@ -13,7 +13,7 @@ set barpadding 1 1
 
 bind t exec alacritty
 bind d exec rofi -show run
-bind q exec chromium
+bind q exec firefox
 
 bind 1 exec rpws 1
 bind 2 exec rpws 2
