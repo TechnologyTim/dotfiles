@@ -101,7 +101,7 @@
     org-edit-src-content-indentation 0)
 #+end_src
 
-** Emacs theme
+** Emacs themes
 #+begin_src emacs-lisp
 ;(use-package doom-themes)
 ;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
