@@ -57,7 +57,7 @@
 
 ** Setting font
 #+begin_src emacs-lisp
-(set-frame-font "JetBrains Mono 11" nil t)
+(set-frame-font "Hermit 11" nil t)
 #+end_src
 
 ** Setting keybindings for text zoom
@@ -110,8 +110,8 @@
 #+end_src
 
 #+begin_src emacs-lisp
-(use-package dracula-theme)
-(load-theme 'dracula t)
+(use-package gruvbox-theme)
+(load-theme 'gruvbox-light-soft t)
 #+end_src
 
 ** Evil mode
