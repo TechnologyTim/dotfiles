@@ -1,3 +1,6 @@
+#+TITLE: TechnologyTims Emacs config
+#+AUTHOR: Tim
+
 * My personal GNU Emacs config file
 
 ** Setup MELPA
