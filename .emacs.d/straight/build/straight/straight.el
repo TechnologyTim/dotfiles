@@ -1,1 +1,0 @@
-/home/timwa/.emacs.d/straight/repos/straight.el/straight.el
