@@ -112,8 +112,7 @@
 
 ** Emacs themes
 #+begin_src emacs-lisp
-(use-package gruvbox-theme)
-(load-theme 'gruvbox-light-medium t)
+(load-theme 'modus-operandi t)
 #+end_src
 
 ** Evil mode
