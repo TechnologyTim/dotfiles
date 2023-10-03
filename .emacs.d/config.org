@@ -165,3 +165,17 @@
   (ivy-set-display-transformer 'ivy-switch-buffer
                                'ivy-rich-switch-buffer-transformer))
 #+end_src
+
+** Other extensions
+*** neotree
+#+begin_src emacs-lisp
+(use-package neotree)
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+#+end_src
+
+*** org-side-tree
+#+begin_src emacs-lisp
+(use-package org-side-tree)
+(require 'org-side-tree)
+#+end_src
