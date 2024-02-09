@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of tim";
+  description = "Home Manager configuration of Tim";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -10,23 +10,26 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-	  nixosConfigurations = {
-		nixos = nixpkgs.lib.nixosSystem {
-		  system = "x86_64-linux";
-	  	  modules = [./configuration.nix];
-		};
-	  };
-
-      homeConfigurations."tim" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      homeConfigurations."timwa" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+    		inherit system;
+    		config.allowUnfree = true;
+  		};
 
         modules = [ ./home.nix ];
-
       };
+
+	  nixosConfigurations = {
+		night-hammer = nixpkgs.lib.nixosSystem {
+		  system = "x86_64-linux";
+		  modules = [ ./configuration.nix ];
+		};
+	  };
+	
     };
 }

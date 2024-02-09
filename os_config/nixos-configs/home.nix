@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "tim";
-  home.homeDirectory = "/home/tim";
+  home.username = "timwa";
+  home.homeDirectory = "/home/timwa";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -34,6 +34,14 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.git
+    pkgs.floorp
+    pkgs.spotify 
+    pkgs.libreoffice-fresh
+    pkgs.nextcloud-client
+    pkgs.pfetch-rs
+    pkgs.materia-theme
+    pkgs.papirus-icon-theme
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -49,6 +57,21 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".emacs.d" = {
+	source = config.lib.file.mkOutOfStoreSymlink "/home/timwa/dotfiles/.emacs.d";
+	recursive = true;
+    };
+  };
+
+  programs.emacs = {
+    enable = true;
+    package = pkgs.emacs;
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "TechnologyTim";
+    userEmail = "timwalter23@protonmail.com";
   };
 
   # Home Manager can also manage your environment variables through
@@ -60,7 +83,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/tim/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/timwa/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";

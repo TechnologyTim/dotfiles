@@ -11,11 +11,11 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  boot.initrd.luks.devices."luks-1b57a22c-944e-4b16-8d78-a0ce1cf4bdb8".device = "/dev/disk/by-uuid/1b57a22c-944e-4b16-8d78-a0ce1cf4bdb8";
+  networking.hostName = "night-hammer"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -62,6 +62,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # enable tailscale
+  services.tailscale.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -83,9 +86,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tim = {
+  users.users.timwa = {
     isNormalUser = true;
-    description = "Tim";
+    description = "Tim Walter";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       firefox
@@ -95,18 +98,22 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = (pkg: true);
 
-  # enable flakes
+  # enabling flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     neovim    
-     zip
-     unzip
-#  wget
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    git
+    curl
+    neovim
+    neofetch
+    cantarell-fonts
+    hermit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
