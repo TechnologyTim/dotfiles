@@ -1,0 +1,30 @@
+import = [
+    "~/.config/alacritty/alacritty-theme/themes/github_light.toml"
+]
+
+[shell]
+program = "/bin/fish"
+args = ["-l"]
+
+[window]
+dimensions = { columns = 90, lines = 26 }
+opacity = 0.9
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Hermit"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hermit"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hermit"
+style = "Italic"
+
+[font.normal]
+family = "Hermit"
+style = "Regular"
