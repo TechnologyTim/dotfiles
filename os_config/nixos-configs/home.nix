@@ -35,13 +35,30 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.git
-    pkgs.floorp
+    pkgs.vivaldi
     pkgs.spotify 
     pkgs.libreoffice-fresh
     pkgs.nextcloud-client
     pkgs.pfetch-rs
-    pkgs.materia-theme
+    pkgs.corefonts
+    pkgs.vistafonts
     pkgs.papirus-icon-theme
+    pkgs.adw-gtk3
+    pkgs.inter
+    pkgs.gradience
+    pkgs.blackbox-terminal
+    pkgs.pdfarranger
+    pkgs.swaylock
+    pkgs.swayidle
+    pkgs.waybar
+    pkgs.swaybg
+    pkgs.waypaper
+    pkgs.wl-clipboard
+    pkgs.wofi
+    pkgs.mako 
+    pkgs.wdisplays
+    pkgs.pw-volume
+    pkgs.alacritty
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -61,6 +78,16 @@
 	source = config.lib.file.mkOutOfStoreSymlink "/home/timwa/dotfiles/.emacs.d";
 	recursive = true;
     };
+
+    ".config/alacritty" = {
+	source = config.lib.file.mkOutOfStoreSymlink "/home/timwa/dotfiles/.config/alacritty";
+	recursive = true;
+    };
+  };
+
+  home.shellAliases = {
+    nixupdate = "sudo nixos-rebuild switch --flake /etc/nixos#night-hammer";
+    hmupdate = "home-manager switch --flake /etc/nixos";
   };
 
   programs.emacs = {

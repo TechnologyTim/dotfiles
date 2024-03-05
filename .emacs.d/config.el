@@ -57,13 +57,7 @@
     org-confirm-babel-evaluate nil
     org-edit-src-content-indentation 0)
 
-;(use-package doom-themes)
-;(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-;      doom-themes-enable-italic t) ; if nil, italics is universally disabled
-;(load-theme 'doom-one t)
-
-(use-package gruvbox-theme)
-(load-theme 'gruvbox-light-soft t)
+(load-theme 'modus-operandi t)
 
 (use-package evil
   :init      ;; tweak evil's configuration before loading it
@@ -109,3 +103,10 @@
   :config
   (ivy-set-display-transformer 'ivy-switch-buffer
                                'ivy-rich-switch-buffer-transformer))
+
+(use-package neotree)
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+(use-package org-side-tree)
+(require 'org-side-tree)

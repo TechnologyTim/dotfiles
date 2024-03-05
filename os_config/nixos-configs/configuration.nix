@@ -47,8 +47,12 @@
   services.xserver.enable = true;
 
   # Enable the Budgie Desktop environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.budgie.enable = true;
+  #services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.budgie.enable = true;
+
+  # Enabling GNOME Desktop environment
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -89,7 +93,7 @@
   users.users.timwa = {
     isNormalUser = true;
     description = "Tim Walter";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video"];
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -103,6 +107,10 @@
   # enabling flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # enabling sway
+  programs.sway.enable = true;
+  programs.light.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -110,10 +118,23 @@
     wget
     git
     curl
+    fish
     neovim
     neofetch
     cantarell-fonts
     hermit
+    inter
+    epson-escpr2
+    gnome.gnome-tweaks
+    gnome-extension-manager
+    pavucontrol
+  ];
+
+  fonts.packages = with pkgs; [
+    cantarell-fonts
+    hermit
+    inter
+    nerdfonts
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

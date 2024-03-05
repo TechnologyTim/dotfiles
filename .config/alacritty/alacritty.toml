@@ -1,9 +1,9 @@
 import = [
-    "~/.config/alacritty/alacritty-theme/themes/github_light.toml"
+    "~/.config/alacritty/alacritty-theme/themes/dracula.toml"
 ]
 
 [shell]
-program = "/bin/fish"
+program = "/run/current-system/sw/bin/fish"
 args = ["-l"]
 
 [window]

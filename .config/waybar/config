@@ -1,0 +1,51 @@
+{
+	"layer": "top",
+	"modules-left": ["sway/workspaces", "mpd", "sway/mode", "sway/window"],
+	"modules-center": [],
+	"modules-right": ["network", "pulseaudio", "temperature", "cpu", "memory", "battery", "clock"],
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-disconnected": "ﳌ",
+		"format-stopped": "",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        }
+	},
+	"custom/pipewire": {
+    		"exec": "pw-volume status",
+    		"return-type": "json",
+    		"interval": "once",
+    		"signal": 8,
+    		"format": "{icon} {percentage}",
+    		"format-icons": {
+        		"mute": "",
+        		"default": ["󰕿", "󰖀", "󰕾"]
+    		}
+	},
+
+	"network": {
+		"tooltip": false,
+		"format-wifi": "WIFI: {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"pulseaudio": {
+		"format": "AUDIO: {volume}%"
+	},
+	"temperature": {
+		"format": "TEMP: {}°"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": "CPU: {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": "MEM: {}%"
+	},
+	"battery": {
+		"tooltip": false,
+		"format": "BAT: {}%"
+	}
+}
